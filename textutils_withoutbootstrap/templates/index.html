@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        textarea {
+            width: 100%;
+            height: 90px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Text Utils</h1>
+    <form action="/analyze" method='get'>
+        <div>
+            <label for="text">Insert your text here:</label>
+            <textarea name="text" id="text"></textarea>
+        </div>
+        <div>
+            <input type="checkbox" name="punctuation" id="punctuation">
+            <label for="punctuation">Remove Punctuation</label>
+        </div>
+        <div>
+            <input type="checkbox" name="full_capital" id="full_capital">
+            <label for="full_capital">Full Capital</label>
+        </div>
+        <div>
+            <input type="checkbox" name="new_line_remover" id="new_line_remover">
+            <label for="new_line_remover">New Line Remover</label>
+        </div>
+        <div>
+            <input type="checkbox" name="extraspace" id="extraspace">
+            <label for="extraspace">Remove Extra Space</label>
+        </div>
+        <div>
+            <input type="checkbox" name="char_counter" id="char_counter">
+            <label for="char_counter">Charecter Counter</label>
+        </div>
+        <div>
+            <button type="submit">Analyze Text</button>
+        </div>
+    </form>
+</body>
+</html>
