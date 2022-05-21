@@ -14,7 +14,6 @@ def analyze(request):
     full_capital_check = request.POST.get('full_capital', 'off')
     new_line_remover_check = request.POST.get('new_line_remover', 'off')
     extra_space_check = request.POST.get('extraspace', 'off')
-    charecter_counter_check = request.POST.get('char_counter', 'off')
     # Analyze the text
     if punctuation_check == 'on':
         punctuation_marks = '''.,?;!:'()[]"_-/@#$%^&*}{~'''
@@ -48,14 +47,7 @@ def analyze(request):
         params = {'purpose': 'Remove Extra Space', 'analyzed_text': analyzed}
         text_area_text = analyzed
         # return render(request, 'analyze.html', params)
-    if (punctuation_check != 'on' and full_capital_check != 'on' and new_line_remover_check != 'on' and extra_space_check != 'on' and charecter_counter_check != 'on'):
+    if (punctuation_check != 'on' and full_capital_check != 'on' and new_line_remover_check != 'on' and extra_space_check != 'on'):
         return HttpResponse("Please select an option")
-    
-    if charecter_counter_check == 'on':
-        count_charecter = 0
-        for char in text_area_text:
-            if char != " ":
-                count_charecter += 1
-        params = {'purpose': 'Charecter Counter', 'count_charecter': count_charecter, 'analyzed_text': analyzed}
 
     return render(request, 'analyze.html', params)
